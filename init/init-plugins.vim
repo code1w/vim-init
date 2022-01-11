@@ -118,7 +118,10 @@ if index(g:bundle_group, 'basic') >= 0
 
 	" Git 支持
 	Plug 'tpope/vim-fugitive'
-
+	" Vim8.0 terminal 支持
+	Plug 'skywind3000/vim-terminal-help'
+	" P4 
+	Plug 'nfvs/vim-perforce'
 	" 使用 ALT+E 来选择窗口
 	nmap <m-e> <Plug>(choosewin)
 
@@ -169,8 +172,7 @@ if index(g:bundle_group, 'enhanced') >= 0
 
 	" 提供 gist 接口
 	Plug 'lambdalisue/vim-gista', { 'on': 'Gista' }
-	
-	" clang format.
+	" clang format 
 	Plug 'rhysd/vim-clang-format'
 
 	"Doxygen Toolkit
