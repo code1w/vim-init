@@ -1,0 +1,3 @@
+source ~/.vim/vim-init/init.vim
+let g:Lf_WindowPosition = 'popup'
+""let g:Lf_ShortcutF = '<leader>ff'

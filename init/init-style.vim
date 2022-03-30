@@ -38,7 +38,6 @@ set showcmd
 " 水平切割窗口时，默认在右边显示新窗口
 set splitright
 
-
 "----------------------------------------------------------------------
 " 颜色主题：色彩文件位于 colors 目录中
 "----------------------------------------------------------------------
@@ -48,10 +47,14 @@ set background=dark
 
 " 允许 256 色
 set t_Co=256
-
+"set t_ut=
 " 设置颜色主题，会在所有 runtimepaths 的 colors 目录寻找同名配置
-color desert256
 
+color desert
+color sublime
+color desert256
+colorscheme codedark
+let g:airline_theme= 'codedark'
 "----------------------------------------------------------------------
 " 状态栏设置
 "----------------------------------------------------------------------
@@ -278,7 +281,24 @@ function! Vim_NeatGuiTabTip()
 	return tip
 endfunc
 
-
+"----------------------------------------------------------------------
+" 光标设置
+"----------------------------------------------------------------------
+" Set cursor shape and color
+if &term =~ "xterm"
+	" 1 -> blinking block  闪烁的方块
+" 2 -> solid block  不闪烁的方块
+" 3 -> blinking underscore  闪烁的下划线
+" 4 -> solid underscore  不闪烁的下划线
+" 5 -> blinking vertical bar  闪烁的竖线
+" 6 -> solid vertical bar  不闪烁的竖线
+	" insert mode 
+	let &t_SI = "\<Esc>[5 q" . "\<Esc>]12;green\x7"
+	" REPLACE mode
+    let &t_SR = "\<Esc>[4 q" . "\<Esc>]12;black\x7"
+    " NORMAL mode
+    let &t_EI = "\<Esc>[2 q" . "\<Esc>]12;green\x7"
+endif 
 "----------------------------------------------------------------------
 " 标签栏最终设置
 "----------------------------------------------------------------------
@@ -286,5 +306,20 @@ set tabline=%!Vim_NeatTabLine()
 set guitablabel=%{Vim_NeatGuiTabLabel()}
 set guitabtooltip=%{Vim_NeatGuiTabTip()}
 
+if filereadable(expand("$HOME/.vim/bundles/LeaderF/README.md"))
+	let g:Lf_WindowPosition = 'popup'
+endif
+
+if filereadable(expand("$HOME/.vim/bundles/vim-cpp-enhanced-highlight/README.md"))
+	let g:cpp_class_scope_highlight = 1
+	let g:cpp_member_variable_highlight = 1
+	let g:cpp_class_decl_highlight = 1
+	let g:cpp_posix_standard = 1
+	let g:cpp_experimental_simple_template_highlight = 1
+	let g:cpp_experimental_template_highlight = 1
+	let g:cpp_concepts_highlight = 1
+	let g:cpp_no_function_highlight = 1
+	let c_no_curly_error=1
+endif
 
 

@@ -17,6 +17,7 @@ if !exists('g:bundle_group')
 	let g:bundle_group = ['basic', 'tags', 'enhanced', 'filetypes', 'textobj']
 	let g:bundle_group += ['tags', 'airline', 'nerdtree', 'ale', 'echodoc']
 	let g:bundle_group += ['leaderf']
+	let g:bundle_group += ['style']
 endif
 
 
@@ -95,7 +96,7 @@ if index(g:bundle_group, 'basic') >= 0
 	Plug 'mhinz/vim-startify'
 
 	" 一次性安装一大堆 colorscheme
-	Plug 'flazz/vim-colorschemes'
+	" Plug 'flazz/vim-colorschemes'
 
 	" 支持库，给其他插件用的函数库
 	Plug 'xolox/vim-misc'
@@ -174,12 +175,22 @@ if index(g:bundle_group, 'enhanced') >= 0
 	Plug 'lambdalisue/vim-gista', { 'on': 'Gista' }
 	" clang format 
 	Plug 'rhysd/vim-clang-format'
+	" floaterm 
+	Plug 'voldikss/vim-floaterm'
+	let g:floaterm_opener = 'split'
+	let g:floaterm_width=0.91
+	let g:floaterm_height=0.91
+	noremap <silent> <leader>ft :FloatermNew<cr>
 
 	"Doxygen Toolkit
 	Plug 'vim-scripts/DoxygenToolkit.vim'
 	" ALT_+/- 用于按分隔符扩大缩小 v 选区
 	map <m-=> <Plug>(expand_region_expand)
 	map <m--> <Plug>(expand_region_shrink)
+
+	" Perforce plugin
+	Plug 'ngemily/vim-vp4'
+	let g:vp4_prompt_on_write=1
 endif
 
 
@@ -418,7 +429,6 @@ if index(g:bundle_group, 'echodoc') >= 0
 	let g:echodoc#enable_at_startup = 1
 endif
 
-
 "----------------------------------------------------------------------
 " LeaderF：CtrlP / FZF 的超级代替者，文件模糊匹配，tags/函数名 选择
 "----------------------------------------------------------------------
@@ -524,6 +534,14 @@ if index(g:bundle_group, 'leaderf') >= 0
 	endif
 endif
 
+if index(g:bundle_group, 'style') >= 0
+	" Visual Studio Code Colors
+	Plug 'tomasiser/vim-code-dark'
+
+	" Plug 'octol/vim-cpp-enhanced-highlight'
+	Plug 'bfrg/vim-cpp-modern'
+
+endif
 
 "----------------------------------------------------------------------
 " 结束插件安装
