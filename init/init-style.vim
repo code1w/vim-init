@@ -50,11 +50,13 @@ set t_Co=256
 "set t_ut=
 " 设置颜色主题，会在所有 runtimepaths 的 colors 目录寻找同名配置
 
-color desert
-color sublime
-color desert256
 colorscheme codedark
 let g:airline_theme= 'codedark'
+color sublime
+color desert
+color desert256
+"colorscheme codedark
+"colorscheme monokai
 "----------------------------------------------------------------------
 " 状态栏设置
 "----------------------------------------------------------------------

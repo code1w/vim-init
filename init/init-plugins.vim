@@ -302,8 +302,13 @@ endif
 " airline
 "----------------------------------------------------------------------
 if index(g:bundle_group, 'airline') >= 0
+	Plug 'Bakudankun/qline.vim'
 	Plug 'vim-airline/vim-airline'
 	Plug 'vim-airline/vim-airline-themes'
+	Plug 'itchyny/lightline.vim'
+	let g:loaded_airline = 1
+	let g:loaded_lightline = 1
+	"let g:qline_config.colorscheme = 'airline:cool'
 	let g:airline_left_sep = ''
 	let g:airline_left_alt_sep = ''
 	let g:airline_right_sep = ''
