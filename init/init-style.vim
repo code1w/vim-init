@@ -47,16 +47,23 @@ set background=dark
 
 " 允许 256 色
 set t_Co=256
-"set t_ut=
+set t_ut=
 " 设置颜色主题，会在所有 runtimepaths 的 colors 目录寻找同名配置
 
 colorscheme codedark
 let g:airline_theme= 'codedark'
 color sublime
 color desert
-color desert256
-"colorscheme codedark
+"color desert256
 "colorscheme monokai
+
+"--------------------------------------------------
+"tokyonight colors
+"set termguicolors
+"let g:tokyonight_style = 'night' " available: night, storm
+"let g:tokyonight_enable_italic = 1
+"colorscheme tokyonight
+
 "----------------------------------------------------------------------
 " 状态栏设置
 "----------------------------------------------------------------------

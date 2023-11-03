@@ -54,6 +54,8 @@ Plug 'godlygeek/tabular', { 'on': 'Tabularize' }
 " Diff 增强，支持 histogram / patience 等更科学的 diff 算法
 Plug 'chrisbra/vim-diff-enhanced'
 
+" Diff 增强，支持 histogram / patience 等更科学的 diff 算法
+Plug 'joe-skb7/cscope-maps'
 
 "----------------------------------------------------------------------
 " Dirvish 设置：自动排序并隐藏文件，同时定位到相关文件
@@ -547,7 +549,9 @@ if index(g:bundle_group, 'style') >= 0
 
 	" Plug 'octol/vim-cpp-enhanced-highlight'
 	Plug 'bfrg/vim-cpp-modern'
-
+	
+	Plug 'ghifarit53/tokyonight-vim'
+	Plug 'arcticicestudio/nord-vim'	
 endif
 
 "----------------------------------------------------------------------
