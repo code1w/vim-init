@@ -122,13 +122,15 @@ silent! call mkdir(expand('~/.vim/tmp'), "p", 0755)
 " 如果你确认你的终端支持，不会在一些不兼容的终端上运行该配置，可以注释
 if has('nvim')
 	set guicursor=
-elseif (!has('gui_running')) && has('terminal') && has('patch-8.0.1200')
+elseif has('terminal')
 	let g:termcap_guicursor = &guicursor
 	let g:termcap_t_RS = &t_RS
 	let g:termcap_t_SH = &t_SH
 	set guicursor=
 	set t_RS=
 	set t_SH=
+	set splitbelow
+	set termwinsize=20*0
 endif
 
 " 打开文件时恢复上一次光标所在位置
